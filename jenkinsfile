@@ -1,20 +1,18 @@
 pipeline{
-    stage('Build'){
-    steps{
-       echo"Building the project-----------------------" 
-	bat "mvn clean"
-    }}
-    stage('Test'){
-       steps{
-       echo"Testing the project-------------------" 
-        bat "mvn test"
+    agent any
+    tools{
+        maven 'Maven'
     }
-    }
-    stage('Deploy'){
-       echo"Deploying the project----" 
-
-    }
-    stage('Release'){
-       echo"Releasing the project" 
+    stages{
+        stage("SCM Checkout"){
+            steps{
+            git 'https://github.com/Divyainfotec/BHICMS-.git'
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                bat 'mvn clean package'
+            }
+        }
     }
 }
