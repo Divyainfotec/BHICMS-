@@ -1,0 +1,20 @@
+pipeline{
+    stage('Build'){
+    steps{
+       echo"Building the project-----------------------" 
+	bat "mvn clean"
+    }}
+    stage('Test'){
+       steps{
+       echo"Testing the project-------------------" 
+        bat "mvn test"
+    }
+    }
+    stage('Deploy'){
+       echo"Deploying the project----" 
+
+    }
+    stage('Release'){
+       echo"Releasing the project" 
+    }
+}
