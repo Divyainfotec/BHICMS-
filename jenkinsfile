@@ -32,14 +32,14 @@ stage('HTML  REPORT')
 steps{
 echo "Generating the HTML report.........."
 publishHTML
-([allowMissing: false, 
-alwaysLinkToLastBuild: false,
-keepAll: false,
-reportDir: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\SeleniumMavenGithub\\test-output', 
-reportFiles: 'index.html',
-reportName: 'HTML Report', 
-reportTitles: '', 
-useWrapperFileDirectly: true])
+(target :[allowMissing: false,
+alwaysLinkToLastBuild: true,
+keepAll: true,
+reportDir: 'reports',
+reportFiles: 'cmsreport.html',
+reportName: 'CMSReport',
+reportTitles: 'CMSHTML REPORT'
+])
 }
 }
 }
