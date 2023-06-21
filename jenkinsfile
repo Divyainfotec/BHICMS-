@@ -21,7 +21,7 @@ publishHTML target: [
             keepAll: true,
             reportDir: 'coverage',
             reportFiles: 'index.html',
-            reportName: 'CMS Report'
+            reportName: 'CMSReport'
           ]
 }
 }
