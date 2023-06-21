@@ -19,7 +19,7 @@ publishHTML target: [
             alwaysLinkToLastBuild: false,
             includes: '**/*.png',
             keepAll: true,
-            reportDir: 'coverage',
+            reportDir: 'test-output',
             reportFiles: 'index.html',
             reportName: 'CMSReport'
           ]
