@@ -14,6 +14,14 @@ stage('Test')
 steps{
 echo "Testing the Code.........."
 bat "mvn test"
+publishHTML target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'coverage',
+            reportFiles: 'index.html',
+            reportName: 'RCov Report'
+          ]
 }
 }
 stage('Compile') 
@@ -28,19 +36,7 @@ stage('Deploy')
 steps{
 echo "Deploying the Project.........."
 }
-stage('HTML  REPORT') 
-steps{
-echo "Generating the HTML report.........."
-publishHTML
-(target :[allowMissing: false,
-alwaysLinkToLastBuild: true,
-keepAll: true,
-reportDir: 'reports',
-reportFiles: 'cmsreport.html',
-reportName: 'CMSReport',
-reportTitles: 'CMSHTML REPORT'
-])
-}
+
 }
 }
 }
