@@ -369,6 +369,15 @@ public class PurchasePage {
 	{
 		this.clickpubill.click();
 	}
+	public void selpuno(String pono) throws InterruptedException
+	{
+		WebElement elem=driver.findElement(By.xpath("//*[@id='Bills_purchase_id']"));
+		JavascriptHelper js=new JavascriptHelper(driver);
+		js.executeScript("arguments[0].click();", elem);
+		DropdownHelper dpsel =new DropdownHelper(driver);
+		dpsel.SelectUsingVisibleValue(elem, pono);
+		Thread.sleep(2000);
+	}
 	public void typeselbill(String pubill)
 	{
 		 gh=new GenericHelper();
@@ -1208,19 +1217,3 @@ public class PurchasePage {
 		dpsel.SelectUsingVisibleText(this.selpurrtrnno, rtrnno);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
