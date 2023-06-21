@@ -294,10 +294,11 @@ public void PurchaseOrder_Bill() throws InterruptedException
 		 puchpge.typevalue(cmpnyname);
 		 impliciteWait(30);
 		// puchpge.typeselcmpny(cmpnyname);
-		 puchpge.clickpubill();
-		 impliciteWait(30);
-		 puchpge.typevalue(editpno);
-		 impliciteWait(30);
+		// puchpge.clickpubill();
+		// impliciteWait(30);
+		// puchpge.typevalue(editpno);
+		// impliciteWait(30);
+		 puchpge.selpuno(editpno);
 		 String bilno="billno00"+RandomStringUtils.randomNumeric(3);
 		 impliciteWait(30);
 		 puchpge.typebillno(bilno);
@@ -480,11 +481,3 @@ public void Logout() throws InterruptedException
 	  impliciteWait(30);
 }
 }
-
-
-
-
-
-
-
-
