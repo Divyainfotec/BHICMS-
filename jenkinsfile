@@ -14,7 +14,6 @@ stage('Test')
 steps{
 echo "Testing the Code.........."
 bat "mvn test"
-publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'Reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
 }
 }
 stage('Compile') 
@@ -31,5 +30,8 @@ echo "Deploying the Project.........."
 }
 
 }
+}
+post{
+publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'Reports', reportFiles: 'index.html', reportName: 'HTMLReport', reportTitles: ''])
 }
 }
