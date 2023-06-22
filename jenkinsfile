@@ -30,5 +30,11 @@ echo "Deploying the Project.........."
 }
 
 }
+post{
+success{
+publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'Reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
 }
+}
+}
+
 }
